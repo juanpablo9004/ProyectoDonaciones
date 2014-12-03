@@ -67,6 +67,9 @@ public class FrmCambioContrasena extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cambio de Contraseña");
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
@@ -308,6 +311,11 @@ public class FrmCambioContrasena extends javax.swing.JFrame {
         LimpiarRegistro();
         this.setVisible(false);
     }//GEN-LAST:event_btncancelarActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        
+        FrmMenu.control=false;
+    }//GEN-LAST:event_formWindowClosing
 
     public boolean Email(String correo) {
         Pattern pat = null;

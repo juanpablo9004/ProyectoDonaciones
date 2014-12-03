@@ -91,6 +91,9 @@ public class FrmBolsa extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestionar Bolsas");
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
@@ -576,7 +579,7 @@ public class FrmBolsa extends javax.swing.JFrame {
             
             if (jchoserfechvenc.getDate().before(new Date())) 
             {
-                JOptionPane.showMessageDialog(this, "La fecha de vencimiento no puede ser antes de la fecha de recolección", "Información", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "La fecha de vencimiento no puede ser menor ó igual a la fecha de recolección", "Información", JOptionPane.INFORMATION_MESSAGE);
                 jchoserfechvenc.requestFocusInWindow();
                 return;
             }
@@ -765,6 +768,11 @@ public class FrmBolsa extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtcantidadKeyTyped
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        
+        FrmMenu.control=false;
+    }//GEN-LAST:event_formWindowClosing
 
     public boolean Email(String correo) {
         

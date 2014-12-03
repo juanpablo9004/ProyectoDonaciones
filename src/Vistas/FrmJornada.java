@@ -107,6 +107,9 @@ public class FrmJornada extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestionar Jornadas");
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
@@ -179,7 +182,7 @@ public class FrmJornada extends javax.swing.JFrame {
 
         jchoserfechprog.setEnabled(false);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cantidad de Sangre Donada cm3", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(0, 0, 0)));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cantidad de Sangre Donada cm3"));
 
         lblapos.setText("A+ *");
 
@@ -1080,6 +1083,11 @@ public class FrmJornada extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtabnegKeyTyped
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        
+        FrmMenu.control=false;
+    }//GEN-LAST:event_formWindowClosing
 
     public boolean Email(String correo) {
         

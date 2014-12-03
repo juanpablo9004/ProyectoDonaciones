@@ -26,6 +26,7 @@ public class FrmMenu extends javax.swing.JFrame {
     private String perfil;
     private FrmCambioContrasena cambioContrasena;
     private Usuario datosusuario;
+    public static boolean control = false;
     
     public FrmMenu() {
         initComponents();
@@ -284,8 +285,13 @@ public class FrmMenu extends javax.swing.JFrame {
     
     private void jmeniteregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmeniteregistrarActionPerformed
         // TODO add your handling code here:
-        FrmUsuario frmusuario = new FrmUsuario();
-        frmusuario.setVisible(true);
+        
+            if(control == false)
+            {
+                control=true;
+                FrmUsuario frmusuario = new FrmUsuario();
+                frmusuario.setVisible(true);
+            } 
     }//GEN-LAST:event_jmeniteregistrarActionPerformed
 
    
@@ -301,8 +307,12 @@ public class FrmMenu extends javax.swing.JFrame {
     
     private void jmenitedonanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenitedonanteActionPerformed
         
-        FrmDonante frmDonante = new FrmDonante();
-        frmDonante.setVisible(true);
+        if(control == false)
+        {
+            control=true;
+            FrmDonante frmDonante = new FrmDonante();
+            frmDonante.setVisible(true);
+        }    
     }//GEN-LAST:event_jmenitedonanteActionPerformed
 
     /**
@@ -316,8 +326,12 @@ public class FrmMenu extends javax.swing.JFrame {
     
     private void jmenitehospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenitehospitalActionPerformed
         
-        FrmHospital frmHospital = new FrmHospital();
-        frmHospital.setVisible(true);
+        if(control == false)
+        {
+            control=true;
+            FrmHospital frmHospital = new FrmHospital();
+            frmHospital.setVisible(true);
+        } 
     }//GEN-LAST:event_jmenitehospitalActionPerformed
     
     /**
@@ -331,8 +345,12 @@ public class FrmMenu extends javax.swing.JFrame {
     
     private void jmenitejornadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenitejornadasActionPerformed
         
-        FrmJornada frmJornada = new FrmJornada();
-        frmJornada.setVisible(true);
+        if(control == false)
+        {
+            control=true;
+            FrmJornada frmJornada = new FrmJornada();
+            frmJornada.setVisible(true);
+        }  
     }//GEN-LAST:event_jmenitejornadasActionPerformed
     
     /**
@@ -346,9 +364,12 @@ public class FrmMenu extends javax.swing.JFrame {
     
     private void jmenitembolsasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenitembolsasActionPerformed
         
-        FrmBolsa frmBolsa = new FrmBolsa();
-        frmBolsa.setVisible(true);
-        
+        if(control == false)
+        {
+            control=true;
+            FrmBolsa frmBolsa = new FrmBolsa();
+            frmBolsa.setVisible(true);
+        }    
     }//GEN-LAST:event_jmenitembolsasActionPerformed
     
     /**
@@ -362,8 +383,12 @@ public class FrmMenu extends javax.swing.JFrame {
     
     private void jmeniteentregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmeniteentregaActionPerformed
         
-        FrmEntrega frmEntrega = new FrmEntrega();
-        frmEntrega.setVisible(true);
+        if(control == false)
+        {
+            control=true;
+            FrmEntrega frmEntrega = new FrmEntrega();
+            frmEntrega.setVisible(true);
+        }
     }//GEN-LAST:event_jmeniteentregaActionPerformed
 
     private void jmenuayudasMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jmenuayudasMenuSelected
@@ -386,10 +411,12 @@ public class FrmMenu extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         
-        FrmAcercaDe acerca = new FrmAcercaDe();
-        
-        acerca.setVisible(true);
-        
+        if(control == false)
+        {
+            control=true;
+            FrmAcercaDe acerca = new FrmAcercaDe();
+            acerca.setVisible(true);
+        }  
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jmenusalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmenusalirMouseClicked
@@ -409,9 +436,13 @@ public class FrmMenu extends javax.swing.JFrame {
 
     private void jmenitecambiarcontraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenitecambiarcontraActionPerformed
        
-        cambioContrasena = new FrmCambioContrasena();
-        cambioContrasena.obtenerDatos(datosusuario);
-        cambioContrasena.setVisible(true);
+        if(control == false)
+        {
+            control=true;
+            cambioContrasena = new FrmCambioContrasena();
+            cambioContrasena.obtenerDatos(datosusuario);
+            cambioContrasena.setVisible(true);
+        }   
     }//GEN-LAST:event_jmenitecambiarcontraActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

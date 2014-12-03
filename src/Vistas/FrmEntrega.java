@@ -97,6 +97,9 @@ public class FrmEntrega extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestionar Entregas");
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
@@ -784,6 +787,11 @@ public class FrmEntrega extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "El código debe ser numerico");
         }
     }//GEN-LAST:event_btneliminarActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        
+        FrmMenu.control=false;
+    }//GEN-LAST:event_formWindowClosing
 
     public boolean Email(String correo) {
         

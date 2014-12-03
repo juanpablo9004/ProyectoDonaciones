@@ -87,6 +87,9 @@ public class FrmUsuario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestionar Usuarios");
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
@@ -141,7 +144,7 @@ public class FrmUsuario extends javax.swing.JFrame {
             }
         });
 
-        jcomboperfil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione Perfil", "Administrador", "Medico", "Enfermero", "Auxiliar", "Bacteriólogo" }));
+        jcomboperfil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione Perfil", "Administrador", "Médico", "Enfermero", "Auxiliar", "Bacteriólogo" }));
         jcomboperfil.setEnabled(false);
 
         lblcontra.setText("Contraseña *");
@@ -425,7 +428,7 @@ public class FrmUsuario extends javax.swing.JFrame {
         /*FondoImagen fondo = new FondoImagen();
          this.add( fondo , BorderLayout.CENTER);
          fondo.repaint();*/
-
+        
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -1061,6 +1064,11 @@ public class FrmUsuario extends javax.swing.JFrame {
     private void txtcorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtcorreoFocusLost
 
     }//GEN-LAST:event_txtcorreoFocusLost
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        
+        FrmMenu.control=false;
+    }//GEN-LAST:event_formWindowClosing
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btncancelar;
